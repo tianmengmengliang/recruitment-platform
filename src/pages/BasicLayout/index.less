@@ -1,0 +1,34 @@
+@import (reference) '~antd/es/style/themes/index';
+
+.basic_layout_root {
+  // display: flex;
+  // justify-content: space-between;
+
+  .main-menu {
+    margin-bottom: 20px;
+  }
+  .main-container {
+    padding: 0 64px 32px;
+    background-color: #fff;
+
+    /* 全局样式 */
+    :global(.components-content-title) {
+      margin-top: 8px;
+      margin-bottom: 20px;
+      color: #000000d9;
+      font-weight: 500;
+      font-size: 30px;
+      font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,
+        Arial, Noto Sans, sans-serif, apple color emoji, segoe ui emoji, Segoe UI Symbol,
+        noto color emoji, sans-serif;
+      line-height: 38px;
+    }
+  }
+}
+
+.pre {
+  margin: 12px 0;
+  padding: 12px 20px;
+  background: @input-bg;
+  box-shadow: @card-shadow;
+}

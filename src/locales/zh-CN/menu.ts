@@ -49,4 +49,11 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+
+  //
+  'menu.Docs': '文档',
+  'menu.layout': '组件',
+  'menu.layout.General': '模块首页',
+  'menu.layout.overflow-tooltip': '文字提示',
+  'menu.layout.publish': '发布招聘信息',
 };

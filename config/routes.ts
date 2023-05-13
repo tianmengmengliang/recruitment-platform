@@ -13,12 +13,40 @@
       },
     ],
   },
+
+  // ---------- start page1 -------------------------
   {
-    path: '/welcome',
-    name: 'welcome',
-    icon: 'smile',
-    component: './Welcome',
+    name: 'BasicLayout',
+    path: '/layout',
+    component: './BasicLayout',
+    routes: [
+      {
+        path: '/layout',
+        redirect: '/layout/general',
+      },
+      {
+        name: 'General',
+        path: '/layout/general',
+        component: './404',
+        hideInMenu: true,
+      },
+      {
+        name: 'publish',
+        path: '/layout/publish',
+        component: './Publish',
+        hideInMenu: true,
+      },
+      {
+        name: 'overflow-tooltip',
+        path: '/layout/overflow-tooltip',
+        component: './OverflowTooltip',
+        hideInMenu: true,
+      },
+    ],
   },
+  // ---------- end page1 -------------------------
+
+  // ------------------ start 无用页面---------------------------------------------------------
   {
     path: '/admin',
     name: 'admin',
@@ -42,6 +70,8 @@
     path: '/list',
     component: './TableList',
   },
+  // ------------------- end -----------------------------------------------------
+
   {
     path: '/',
     redirect: '/welcome',

@@ -49,4 +49,9 @@ export default {
   'menu.editor.flow': 'Flow Editor',
   'menu.editor.mind': 'Mind Editor',
   'menu.editor.koni': 'Koni Editor',
+  //
+  'menu.Docs': 'Docs',
+  'menu.Components': 'Components',
+  'menu.Components.General': 'home',
+  'menu.Components.overflow-tooltip': 'Overflow Tooltip',
 };
