@@ -4,12 +4,14 @@ import React from 'react';
 import { SelectLang, useModel } from 'umi';
 import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';
+import Sign from './SignIn';
 import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
 
 const GlobalHeaderRight: React.FC = () => {
   const { initialState } = useModel('@@initialState');
+  const { currentUser = {} } = initialState || {};
 
   if (!initialState || !initialState.settings) {
     return null;
@@ -17,13 +19,13 @@ const GlobalHeaderRight: React.FC = () => {
 
   const { navTheme, layout } = initialState.settings;
   let className = styles.right;
-
   if ((navTheme === 'dark' && layout === 'top') || layout === 'mix') {
     className = `${styles.right}  ${styles.dark}`;
   }
+
   return (
     <Space className={className}>
-      <HeaderSearch
+      {/* <HeaderSearch
         className={`${styles.action} ${styles.search}`}
         placeholder="站内搜索"
         defaultValue="umi ui"
@@ -42,10 +44,10 @@ const GlobalHeaderRight: React.FC = () => {
             value: 'Pro Layout',
           },
         ]}
-        // onSearch={value => {
-        //   console.log('input', value);
-        // }}
-      />
+        onSearch={value => {
+          console.log('input', value);
+        }}
+      /> 
       <span
         className={styles.action}
         onClick={() => {
@@ -53,8 +55,9 @@ const GlobalHeaderRight: React.FC = () => {
         }}
       >
         <QuestionCircleOutlined />
-      </span>
-      <Avatar />
+      </span>*/}
+
+      {currentUser.username ? <Avatar /> : <Sign />}
       <SelectLang className={styles.action} />
     </Space>
   );

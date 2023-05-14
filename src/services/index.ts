@@ -3,7 +3,6 @@ import { request } from 'umi';
 function doGet(method: string) {
   return ['GET', 'get'].includes(method);
 }
-
 function validateFields(params = {}) {
   const query = {};
   Object.keys(params).forEach((item) => {

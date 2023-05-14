@@ -1,14 +1,28 @@
 import React from 'react';
 import { Alert, Input, Form, Button, Row, Col, message } from 'antd';
+import { requestData } from '@/services';
+import { handleRes } from '@/uitls/uitls';
 import styles from './index.less';
 
 const Welcome: React.FC = () => {
   const [form] = Form.useForm();
 
   const onSubmit = (e: any) => {
-    form.validateFields().then(async (values: any) => {
-      console.log('values:', values);
-    });
+    form
+      .validateFields()
+      .then(async (values: any) => {
+        //
+        console.log('values:', values);
+        const res = await requestData('', 'POST', values);
+        if (res.success) {
+          message.success('');
+        } else {
+          handleRes(res);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
