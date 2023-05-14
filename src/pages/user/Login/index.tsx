@@ -80,11 +80,23 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: API.LoginParams) => {
     setSubmitting(true);
     try {
-      const res = await login({ ...values, type });
+      const res = await login({ ...values }); // , type
       if (res.success) {
         // message.success('登录成功！');
-        await fetchUserInfo();
-        /** 此方法会跳转到 redirect 参数所在的位置 */
+        // await fetchUserInfo();
+        // goto();
+        /**
+         *
+         * or
+         *
+         **/
+        setInitialState({
+          ...initialState,
+          currentUser: {
+            username: values.userName,
+            token: res.data,
+          },
+        });
         goto();
       } else {
         // 如果失败去设置用户错误信息

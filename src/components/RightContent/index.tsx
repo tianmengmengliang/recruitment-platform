@@ -12,6 +12,7 @@ export type SiderTheme = 'light' | 'dark';
 const GlobalHeaderRight: React.FC = () => {
   const { initialState } = useModel('@@initialState');
   const { currentUser = {} } = initialState || {};
+  console.log('currentUser:', currentUser);
 
   if (!initialState || !initialState.settings) {
     return null;

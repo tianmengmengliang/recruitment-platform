@@ -74,7 +74,7 @@
 
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/layout',
   },
   {
     component: './404',
